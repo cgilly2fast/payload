@@ -7,13 +7,15 @@ import { devUser } from '../credentials.js'
 import { MediaCollection } from './collections/Media/index.js'
 import { PostsCollection, postsSlug } from './collections/Posts/index.js'
 import { MenuGlobal } from './globals/Menu/index.js'
+import { CalendarSettings } from './collections/CalendarSettings/index.js'
+import { Users } from './collections/Users/index.js'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfigWithDefaults({
   // ...extend config here
-  collections: [PostsCollection, MediaCollection],
+  collections: [PostsCollection, MediaCollection, CalendarSettings, Users],
   admin: {
     importMap: {
       baseDir: path.resolve(dirname),
